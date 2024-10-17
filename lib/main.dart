@@ -1,13 +1,20 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:minimal_ecomm_app/models/shop.dart';
 import 'package:minimal_ecomm_app/pages/cart_page.dart';
 import 'package:minimal_ecomm_app/pages/intro_page.dart';
 import 'package:minimal_ecomm_app/pages/shop_page.dart';
 import 'package:minimal_ecomm_app/themes/light_mode.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider( //would be MultiProvider if we have like multiple providers to work with with a list of providers each is a ChangeNotifierProvider
+      create: (context) =>  Shop(),
+      child: const MyApp(),
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {

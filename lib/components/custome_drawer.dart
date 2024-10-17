@@ -40,14 +40,14 @@ class MyDrawer extends StatelessWidget {
               }),
 
               // cart tile
-              MyListTile(text: 'Cart', icon: Icons.shopping_cart, onTap: (){{
+              MyListTile(text: 'Cart', icon: Icons.shopping_cart, onTap: (){
                 Navigator.pop(context);
 
                 if(isHome) {
                   Navigator.pushNamed(context, '/cart_page');
                 }
               }
-    },),
+    ,),
             ],
           ),
 
